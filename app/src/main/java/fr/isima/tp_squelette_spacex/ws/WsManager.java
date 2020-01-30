@@ -12,7 +12,8 @@ public final class WsManager {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.spacexdata.com/v3/")
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.spacexdata.com/v3/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

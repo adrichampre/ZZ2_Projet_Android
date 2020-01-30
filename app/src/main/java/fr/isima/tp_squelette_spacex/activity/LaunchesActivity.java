@@ -44,7 +44,6 @@ public class LaunchesActivity extends Activity implements AdapterView.OnItemClic
         WsManager.getSpaceXService().listLaunches().enqueue(this);
     }
 
-
     @Override
     public void onResponse(Call<List<Launch>> call, Response<List<Launch>> response) {
         p.setVisibility(View.INVISIBLE);
