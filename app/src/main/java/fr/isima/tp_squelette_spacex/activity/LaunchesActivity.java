@@ -1,6 +1,7 @@
 package fr.isima.tp_squelette_spacex.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +37,14 @@ public class LaunchesActivity extends Activity implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Launch l = (Launch) parent.getItemAtPosition(position);
+        if(l.article_link == null){
+            Toast.makeText(this, "Pas d'article_link !", Toast.LENGTH_SHORT);
+        }
+        else{
+            /*if(l.article_link.article_link.contains("https://"))
+                Intent intent = */
+        }
 
     }
 

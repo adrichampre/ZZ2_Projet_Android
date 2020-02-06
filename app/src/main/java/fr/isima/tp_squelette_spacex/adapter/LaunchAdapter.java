@@ -12,22 +12,32 @@ import java.util.List;
 
 import fr.isima.tp_squelette_spacex.Launch;
 import fr.isima.tp_squelette_spacex.R;
+import fr.isima.tp_squelette_spacex.activity.LaunchesActivity;
+import fr.isima.tp_squelette_spacex.ws.WsManager;
 
 public class LaunchAdapter extends ArrayAdapter<Launch> {
 
     int ID;
     LayoutInflater layoutInflater;
 
-    LaunchAdapter(Activity activity, int layoutResourceId, List<Launch> objects){
+    LaunchAdapter(Activity activity, int layoutResourceId, List<Launch> objects) {
         super(activity, layoutResourceId, objects);
         ID = layoutResourceId;
         layoutInflater = activity.getLayoutInflater();
 
     }
 
-    /*public View getView(int postion, View convertView, ViewGroup parent){
-        if(convertView == NULL)
-            view = layoutInflater.inflate(ID, parent, false);
-            TextView name = findViewById(R.id.list)
-    }*/
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        if (convertView == null)
+            convertView = layoutInflater.inflate(ID, parent, false);
+        TextView nomFusee = convertView.findViewById(R.id.nomFusee);
+        nomFusee.setText(getItem(position).info_rocket.rocket_name);
+        TextView nomMission = convertView.findViewById(R.id.nomFusee);
+        nomMission.setText(getItem(position).mission_name);
+        TextView dateMission = convertView.findViewById(R.id.nomFusee);
+        dateMission.setText(getItem(position).launch_date_unix.toString());
+
+        return convertView;
+    }
 }
