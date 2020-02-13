@@ -1,6 +1,6 @@
 package fr.isima.tp_squelette_spacex.ws;
 
-import fr.isima.tp_squelette_spacex.Launch;
+import fr.isima.tp_squelette_spacex.adapter.Launch;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
