@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
         }
         if(item.getItemId() == R.id.rockets)
         {
-
+            startActivity(new Intent(this, RocketsActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

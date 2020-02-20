@@ -50,7 +50,7 @@ public class LaunchesActivity extends Activity implements AdapterView.OnItemClic
         }
         else{
             if(l.links.article_link.contains("https://")) {
-                intent = new Intent(this, LaunchesActivity.class).putExtra("Launch", l);
+                intent = new Intent(this, LaunchActivity.class).putExtra("Launch", l);
             }
             else{
                 intent = new Intent(ACTION_VIEW,Uri.parse(l.links.article_link));

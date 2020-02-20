@@ -1,5 +1,5 @@
 package fr.isima.tp_squelette_spacex.adapter;
-/*
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +11,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import androidx.viewpager.widget.PagerAdapter;
-import fr.isima.spacex.R;
-*/
+import fr.isima.tp_squelette_spacex.R;
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Supprimez la classe vide et décommentez la vraie classe et les imports lorsque vous en aurez besoin
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-public class PicturesPager {}
-
-/*
 public class PicturesPager extends PagerAdapter {
     private Context context;
 
@@ -59,4 +52,3 @@ public class PicturesPager extends PagerAdapter {
         return object == view;
     }
 }
-*/

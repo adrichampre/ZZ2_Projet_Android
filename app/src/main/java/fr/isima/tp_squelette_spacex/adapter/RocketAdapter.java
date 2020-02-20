@@ -1,5 +1,5 @@
 package fr.isima.tp_squelette_spacex.adapter;
-/*
+
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import fr.isima.spacex.ws.Rocket;
-*/
+
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Supprimez la classe vide et décommentez la vraie classe et les imports lorsque vous en aurez besoin
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-public class RocketAdapter {}
-
-/*
 public class RocketAdapter extends ArrayAdapter<Rocket> {
     private int layoutResourceId;
     LayoutInflater inflater;
@@ -64,4 +60,3 @@ public class RocketAdapter extends ArrayAdapter<Rocket> {
         }
     }
 }
-*/
