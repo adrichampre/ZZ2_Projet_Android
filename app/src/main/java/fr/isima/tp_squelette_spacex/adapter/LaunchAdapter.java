@@ -11,12 +11,14 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import fr.isima.tp_squelette_spacex.R;
+import fr.isima.tp_squelette_spacex.model.Launch;
 
 public class LaunchAdapter extends ArrayAdapter<Launch> {
 
-    int ID;
-    LayoutInflater layoutInflater;
+    private int ID;
+    private LayoutInflater layoutInflater;
 
     public LaunchAdapter(Activity activity, int layoutResourceId, List<Launch> objects) {
         super(activity, layoutResourceId, objects);
@@ -24,16 +26,19 @@ public class LaunchAdapter extends ArrayAdapter<Launch> {
         layoutInflater = activity.getLayoutInflater();
 
     }
-
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         if (convertView == null) {
             convertView = layoutInflater.inflate(ID, parent, false);
         }
+
         TextView nomFusee = convertView.findViewById(R.id.nomFusee);
         nomFusee.setText(getItem(position).rocket.rocket_name);
+
         TextView nomMission = convertView.findViewById(R.id.nomMission);
         nomMission.setText(getItem(position).mission_name);
+
         TextView dateMission = convertView.findViewById(R.id.dateMission);
         Date date = new Date(getItem(position).launch_date_unix);
         SimpleDateFormat formater = new SimpleDateFormat("dd MMMM yyyy hh:mm");

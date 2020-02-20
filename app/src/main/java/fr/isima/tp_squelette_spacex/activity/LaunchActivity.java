@@ -6,24 +6,22 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import java.net.URL;
-
 import fr.isima.tp_squelette_spacex.R;
-import fr.isima.tp_squelette_spacex.adapter.Launch;
+import fr.isima.tp_squelette_spacex.model.Launch;
 
 public class LaunchActivity extends Activity {
 
     WebView webview;
-    Launch l;
+    Launch launch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
-        l = (Launch) getIntent().getSerializableExtra("Launch");
+        launch = (Launch) getIntent().getSerializableExtra("Launch");
         webview = findViewById(R.id.webview);
         webview.setWebViewClient(new WebViewClient());
-        webview.loadUrl(l.links.article_link);
+        webview.loadUrl(launch.links.article_link);
     }
 }

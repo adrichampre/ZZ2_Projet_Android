@@ -9,42 +9,37 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import fr.isima.tp_squelette_spacex.model.Rocket;
 
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Supprimez la classe vide et décommentez la vraie classe et les imports lorsque vous en aurez besoin
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public class RocketAdapter extends ArrayAdapter<Rocket> {
     private int layoutResourceId;
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
 
     public RocketAdapter(Activity activity, int layoutResourceId, List<Rocket> data)
     {
         super(activity, layoutResourceId, data);
-
         this.layoutResourceId = layoutResourceId;
         inflater = activity.getLayoutInflater();
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    @Override @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent)
     {
         View view = convertView;
-
         if (view == null) {
             view = inflater.inflate(layoutResourceId, parent, false);
         }
-
         ViewHolder holder = (ViewHolder)view.getTag();
         if (holder == null)
         {
             holder = new ViewHolder(view);
             view.setTag(holder);
         }
-
         Rocket rocket = getItem(position);
-        holder.rocketName.setText(rocket.rocket_name);
+        if(rocket != null)
+            holder.rocketName.setText(rocket.rocket_name);
 
         return view;
     }
@@ -52,9 +47,9 @@ public class RocketAdapter extends ArrayAdapter<Rocket> {
 
     private class ViewHolder
     {
-        public TextView rocketName;
+        private TextView rocketName;
 
-        public ViewHolder(View row)
+        private ViewHolder(View row)
         {
             rocketName = row.findViewById(android.R.id.text1);
         }

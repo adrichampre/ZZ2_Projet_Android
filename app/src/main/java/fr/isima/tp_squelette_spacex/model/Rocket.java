@@ -1,4 +1,4 @@
-package fr.isima.tp_squelette_spacex.adapter;
+package fr.isima.tp_squelette_spacex.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

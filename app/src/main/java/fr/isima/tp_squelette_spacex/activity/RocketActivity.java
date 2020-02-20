@@ -3,7 +3,7 @@ package fr.isima.tp_squelette_spacex.activity;
 import androidx.viewpager.widget.ViewPager;
 import fr.isima.tp_squelette_spacex.R;
 import fr.isima.tp_squelette_spacex.adapter.PicturesPager;
-import fr.isima.tp_squelette_spacex.adapter.Rocket;
+import fr.isima.tp_squelette_spacex.model.Rocket;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.os.Bundle;
 public class RocketActivity extends Activity {
 
     private ViewPager viewpager;
-    private Rocket r;
+    private Rocket rocket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,9 @@ public class RocketActivity extends Activity {
             finish();
         }
         else{
-            r = (Rocket) getIntent().getSerializableExtra("Rocket");
-            viewpager.setAdapter(new PicturesPager(this, r.flickr_images));
+            rocket = (Rocket) getIntent().getSerializableExtra("Rocket");
+            if(rocket != null)
+                viewpager.setAdapter(new PicturesPager(this, rocket.flickr_images));
         }
     }
 }
